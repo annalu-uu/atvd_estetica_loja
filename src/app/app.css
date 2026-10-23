@@ -21,7 +21,7 @@
   .marca {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
   }
   
   /* Flor pequena: cor, tamanho e rotação */
@@ -102,7 +102,7 @@
   
   /* Parágrafo principal */
   .destaque p {
-    max-width: 440px;
+    max-width: 445px;
     line-height: 1.8;
   }
   
@@ -144,7 +144,7 @@
   
   /* Seção Nossa loja */
   .secao {
-    padding: 55px 7%;
+    padding: 55px 8%;
   }
   
   /* Título e descrição da seção */
@@ -163,7 +163,7 @@
   /* Descrições da seção e dos cartões */
   .titulo-secao p,
   .categoria p {
-    color: #82718d;
+    color: #876a9b;
     line-height: 1.7;
   }
   
@@ -191,7 +191,7 @@
   
   /* Títulos dos cartões */
   .categoria h3 {
-    color: #593675;
+    color: #5a3777;
   }
   
   /* Espaçamento dos links dos cartões */
