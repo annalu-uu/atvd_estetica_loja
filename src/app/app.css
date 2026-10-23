@@ -1,268 +1,242 @@
 
-/* :host representa o componente principal do Angular */
+/* Configuração geral do componente */
 :host {
-    display: block; /* Faz o componente ocupar um bloco na página */
-    min-height: 100vh; /* Garante altura mínima igual à altura da tela */
-    color: #453a40; /* Define a cor padrão dos textos */
+    display: block;
+    min-height: 100vh;
+    color: #493653;
   }
   
-  /* Cabeçalho do site, onde ficam o nome da loja e o menu */
+  /* Cabeçalho da loja */
   .cabecalho {
-    display: flex; /* Organiza os elementos lado a lado */
-    align-items: center; /* Alinha os elementos verticalmente */
-    justify-content: space-between; /* Separa a marca do menu */
-    gap: 24px; /* Cria espaço entre os elementos */
-    padding: 20px 7%; /* Espaço interno: 20px em cima/baixo e 7% nas laterais */
-    background: #fff; /* Fundo branco */
-    box-shadow: 0 2px 12px #563d4a12; /* Sombra suave abaixo do cabeçalho */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px 7%;
+    background: #ffffff;
+    box-shadow: 0 2px 12px #59367515;
   }
   
   /* Agrupa a flor pequena e o nome da loja */
   .marca {
-    display: flex; /* Coloca a flor e o texto lado a lado */
-    align-items: center; /* Alinha a flor e o texto pelo centro */
-    gap: 12px; /* Espaço entre a flor e o nome */
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
   
-  /* Estilo da flor pequena que fica no cabeçalho */
+  /* Flor pequena: cor, tamanho e rotação */
   .marca-icone {
-    color: #bd7194; /* Cor da flor */
-    font-size: 38px; /* Tamanho da flor */
+    display: inline-block;
+    color: #9664b8;
+    font-size: 38px;
+    animation: girar-flor 10s linear infinite;
   }
   
-  /* Estilo do título Minha Loja */
+  /* Nome da loja */
   .marca h1 {
-    margin: 0; /* Remove a margem padrão do título */
-    color: #784d64; /* Cor do título */
-    font-size: 25px; /* Tamanho da letra */
+    margin: 0;
+    color: #593675;
+    font-size: 25px;
   }
   
-  /* Estilo do subtítulo Estética & Bem-Estar */
+  /* Subtítulo da loja */
   .marca p {
-    margin: 3px 0 0; /* Espaço de 3px acima e nenhum nas laterais/abaixo */
-    color: #8c7882; /* Cor do subtítulo */
-    font-size: 13px; /* Tamanho da letra */
+    margin: 3px 0 0;
+    color: #887492;
+    font-size: 13px;
   }
   
-  /* Organiza os links do menu */
+  /* Menu de navegação */
   .menu {
-    display: flex; /* Coloca os links lado a lado */
-    flex-wrap: wrap; /* Permite que os links passem para outra linha */
-    gap: 22px; /* Espaço entre os links */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
   }
   
-  /* Estilo dos links do menu e dos cartões */
+  /* Links do menu e dos cartões */
   .menu a,
   .categoria a {
-    color: #784d64; /* Cor dos links */
-    font-weight: 600; /* Deixa as letras um pouco mais fortes */
-    text-decoration: none; /* Remove o sublinhado dos links */
+    color: #70458f;
+    font-weight: 600;
+    text-decoration: none;
   }
   
-  /* Muda a cor dos links quando o mouse passa sobre eles */
+  /* Efeito ao passar o mouse nos links */
   .menu a:hover,
   .categoria a:hover {
-    color: #bd7194; /* Cor do link ao passar o mouse */
+    color: #a77ac7;
   }
   
-  /* Seção principal de destaque da página inicial */
+  /* Seção principal da página */
   .destaque {
-    display: flex; /* Organiza o texto e a flor lado a lado */
-    align-items: center; /* Centraliza os elementos verticalmente */
-    justify-content: space-between; /* Separa o texto da flor */
-    gap: 30px; /* Espaço entre o texto e a flor */
-    min-height: 350px; /* Altura mínima da seção */
-    padding: 55px 10%; /* Espaço interno da seção */
-    background: #f7eaf0; /* Fundo rosa-claro */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    min-height: 350px;
+    padding: 55px 10%;
+    background: #f3ecfa;
   }
   
-  /* Limita a largura do conteúdo textual da seção principal */
+  /* Limita a largura do texto principal */
   .destaque-conteudo {
-    max-width: 560px; /* Impede que o texto fique muito largo */
+    max-width: 560px;
   }
   
-  /* Estilo da etiqueta e do pequeno título da seção */
+  /* Etiqueta e título pequeno */
   .etiqueta,
   .titulo-secao span {
-    color: #925ea6; /* Cor roxa dos textos */
-    font-size: 12px; /* Tamanho pequeno da letra */
-    font-weight: 700; /* Deixa a letra em negrito */
-    letter-spacing: 2px; /* Aumenta o espaço entre as letras */
+    color: #8053a0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
   }
   
-  /* Estilo do título principal da página */
+  /* Título principal */
   .destaque h2 {
-    margin: 18px 0; /* Espaço acima e abaixo do título */
-    color: #70455c; /* Cor do título */
+    margin: 18px 0;
+    color: #593675;
     font-size: clamp(32px, 5vw, 48px);
-    /* O tamanho se adapta à tela:
-       mínimo de 32px, preferência de 5vw e máximo de 48px */
-    line-height: 1.15; /* Controla o espaço entre as linhas */
+    line-height: 1.15;
   }
   
-  /* Estilo do parágrafo da seção principal */
+  /* Parágrafo principal */
   .destaque p {
-    max-width: 440px; /* Limita a largura do parágrafo */
-    line-height: 1.8; /* Aumenta o espaço entre as linhas */
+    max-width: 440px;
+    line-height: 1.8;
   }
   
-  /* Estilo do botão Conhecer catálogo */
+  /* Botão Conhecer catálogo */
   .botao {
-    display: inline-block; /* Permite aplicar largura, altura e margens */
-    margin-top: 15px; /* Espaço acima do botão */
-    padding: 13px 22px; /* Espaço interno vertical e horizontal */
-    border-radius: 8px; /* Arredonda os cantos */
-    background: #9f5d7d; /* Fundo rosa-escuro */
-    color: #fff; /* Texto branco */
-    font-weight: 600; /* Texto um pouco mais forte */
-    text-decoration: none; /* Remove o sublinhado */
+    display: inline-block;
+    margin-top: 15px;
+    padding: 13px 22px;
+    border-radius: 8px;
+    background: #8053a0;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
   }
   
-  /* Muda o fundo do botão quando o mouse passa sobre ele */
+  /* Efeito ao passar o mouse no botão */
   .botao:hover {
-    background: #804662; /* Fundo mais escuro */
+    background: #593675;
   }
   
-  /* Estilo da flor grande da seção principal */
+  /* Flor grande da página inicial */
   .destaque-icone {
-    color: #d7a6bc; /* Cor rosa da flor */
+    display: inline-block;
+    color: #c8a2e0;
     font-size: clamp(100px, 20vw, 210px);
-    /* A flor cresce ou diminui conforme a tela,
-       sem ficar menor que 100px ou maior que 210px */
+    animation: girar-flor 10s linear infinite;
   }
   
-  /* Espaçamento da seção Nossa loja */
+  /* Animação usada pelas duas flores */
+  @keyframes girar-flor {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Seção Nossa loja */
   .secao {
-    padding: 55px 7%; /* Espaço interno da seção */
+    padding: 55px 7%;
   }
   
-  /* Centraliza o título e a descrição da seção */
+  /* Título e descrição da seção */
   .titulo-secao {
-    margin-bottom: 30px; /* Espaço abaixo do título */
-    text-align: center; /* Centraliza o texto */
+    margin-bottom: 30px;
+    text-align: center;
   }
   
-  /* Estilo do título Nossa loja */
+  /* Título Nossa loja */
   .titulo-secao h2 {
-    margin: 10px 0; /* Espaço acima e abaixo */
-    color: #70455c; /* Cor do título */
-    font-size: 32px; /* Tamanho da letra */
+    margin: 10px 0;
+    color: #593675;
+    font-size: 32px;
   }
   
-  /* Estilo das descrições da seção e dos cartões */
+  /* Descrições da seção e dos cartões */
   .titulo-secao p,
   .categoria p {
-    color: #857680; /* Cor dos parágrafos */
-    line-height: 1.7; /* Espaçamento entre linhas */
+    color: #82718d;
+    line-height: 1.7;
   }
   
-  /* Organiza os três cartões em colunas */
+  /* Organiza os cartões em três colunas */
   .categorias {
-    display: grid; /* Ativa o sistema de grade */
+    display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    /* Cria três colunas com larguras iguais */
-    gap: 24px; /* Espaço entre os cartões */
+    gap: 24px;
   }
   
-  /* Aparência dos cartões Produtos, Serviços e Meus pedidos */
+  /* Aparência dos cartões */
   .categoria {
-    padding: 28px; /* Espaço interno do cartão */
-    border: 1px solid #f0e1e8; /* Borda fina rosa-clara */
-    border-radius: 14px; /* Cantos arredondados */
-    background: #fff; /* Fundo branco */
-    box-shadow: 0 5px 20px #563d4a0a; /* Sombra suave */
+    padding: 28px;
+    border: 1px solid #e5d7f0;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 5px 20px #5936750a;
   }
   
-  /* Estilo dos ícones dentro dos cartões */
+  /* Ícones dos cartões */
   .categoria-icone {
-    color: #a571bd; /* Cor roxa dos ícones */
-    font-size: 35px; /* Tamanho dos ícones */
+    color: #9664b8;
+    font-size: 35px;
   }
   
-  /* Cor dos títulos dos cartões */
+  /* Títulos dos cartões */
   .categoria h3 {
-    color: #70455c; /* Cor do título */
+    color: #593675;
   }
   
   /* Espaçamento dos links dos cartões */
   .categoria a {
-    display: inline-block; /* Permite aplicar margem */
-    margin-top: 10px; /* Espaço acima do link */
-  }
-  
-  /* Rodapé do site */
-  .rodape {
-    padding: 25px; /* Espaço interno do rodapé */
-    background: #70455c; /* Fundo roxo-escuro */
-    color: #fff; /* Texto branco */
-    text-align: center; /* Centraliza os textos */
-  }
-  
-  /* Remove margens grandes dos parágrafos do rodapé */
-  .rodape p {
-    margin: 5px; /* Espaço pequeno entre os parágrafos */
-  }
-  
-  /* Configurações para telas com largura de até 760px,
-     como celulares e alguns tablets */
-  @media (max-width: 760px) {
-  
-    /* Organiza o cabeçalho verticalmente em telas pequenas */
-    .cabecalho {
-      align-items: flex-start; /* Alinha os elementos à esquerda */
-      flex-direction: column; /* Coloca a marca e o menu em linhas diferentes */
-    }
-  
-    /* Reduz o espaço entre os links do menu */
-    .menu {
-      gap: 14px; /* Menor espaço entre os links */
-    }
-  
-    /* Reduz o espaçamento da seção principal */
-    .destaque {
-      padding: 40px 7%; /* Menor espaço interno */
-    }
-  
-    /* Esconde a flor grande em telas pequenas */
-    .destaque-icone {
-      display: none; /* A flor não aparece no celular */
-    }
-  
-    /* Coloca os cartões um abaixo do outro */
-    .categorias {
-      grid-template-columns: 1fr; /* Uma única coluna */
-    }
-  }
-  
-  /* ANIMAÇÃO DAS FLORES */
-  
-  /* Configura a flor pequena do cabeçalho */
-  .marca-icone {
     display: inline-block;
-    /* Permite aplicar a rotação corretamente ao símbolo */
-    color: #a571bd; /* Cor roxa da flor pequena */
-    font-size: 38px; /* Tamanho da flor pequena */
-    animation: girar-flor 10s linear infinite;
+    margin-top: 10px;
   }
   
-  /* Define como a rotação acontece */
-  @keyframes girar-flor {
-  
-    from {
-      transform: rotate(0deg); /* Começa sem rotação */
-    }
-  
-    to {
-      transform: rotate(360deg); /* Completa uma volta */
-    }
+  /* Rodapé */
+  .rodape {
+    padding: 25px;
+    background: #593675;
+    color: #ffffff;
+    text-align: center;
   }
   
-  /* Configura a flor grande da seção principal */
-  .destaque-icone {
-    display: inline-block; /* Permite girar o símbolo */
-    font-size: 150px; /* Tamanho definido para a flor grande */
-    color: #a571bd; /* Cor rosa da flor grande */
-    animation: girar-flor 10s linear infinite;
-    /* Faz a flor grande girar continuamente em 10 segundos */
+  /* Espaçamento dos textos do rodapé */
+  .rodape p {
+    margin: 5px;
+  }
+  
+  /* Ajustes para celulares e telas menores */
+  @media (max-width: 760px) {
+    .cabecalho {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  
+    .menu {
+      gap: 14px;
+    }
+  
+    .destaque {
+      padding: 40px 7%;
+    }
+  
+    /* Mantém o comportamento original: esconde a flor grande
+       em telas com largura de até 760px */
+    .destaque-icone {
+      display: none;
+    }
+  
+    /* Mostra os cartões um abaixo do outro */
+    .categorias {
+      grid-template-columns: 1fr;
+    }
   }
   
