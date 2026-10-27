@@ -1,0 +1,187 @@
+
+/* apresentação principal da loja */
+.destaque {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 70px 8%;
+    background-color: #f3ecfa;
+    border-radius: 0 0 28px 28px;
+  }
+  
+  .destaque-conteudo {
+    max-width: 600px;
+  }
+  
+  .etiqueta {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: #9664b8;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  
+  .destaque h2 {
+    margin: 0 0 20px;
+    color: #593675;
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.2;
+  }
+  
+  .destaque p {
+    max-width: 480px;
+    color: #493653;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+  
+  /* botões e links de ação */
+  .botao {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 13px 24px;
+    border-radius: 24px;
+    background-color: #8052a0;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .botao:hover {
+    background-color: #593675;
+  }
+  
+  /* flor decorativa  */
+  .destaque-icone {
+    color: #9664b8;
+    font-size: clamp(100px, 18vw, 200px);
+    animation: girar-flor 10s linear infinite;
+  }
+  
+  /* animação da flor */
+  @keyframes girar-flor {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* espaçamento da seção de categorias */
+  .secao {
+    padding: 65px 8%;
+  }
+  
+  .titulo-secao {
+    margin-bottom: 35px;
+    text-align: center;
+  }
+  
+  .titulo-secao span {
+    color: #9664b8;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+  
+  .titulo-secao h2 {
+    margin: 10px 0;
+    color: #593675;
+    font-size: 34px;
+  }
+  
+  .titulo-secao p {
+    color: #493653;
+    line-height: 1.7;
+  }
+  
+  /* organização dos cartões de categorias */
+  .categorias {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+  
+  .categoria {
+    padding: 30px 24px;
+    border: 1px solid #eadcf5;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 24px #59367512;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .categoria:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px #59367520;
+  }
+  
+  .categoria-icone {
+    margin-bottom: 15px;
+    color: #9664b8;
+    font-size: 36px;
+  }
+  
+  .categoria h3 {
+    color: #593675;
+    font-size: 22px;
+  }
+  
+  .categoria p {
+    color: #493653;
+    line-height: 1.7;
+  }
+  
+  .categoria a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #8052a0;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  
+  .categoria a:hover {
+    color: #593675;
+    text-decoration: underline;
+  }
+  
+  /* ajustes para telas menores */
+  @media (max-width: 760px) {
+    .destaque {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 45px 6%;
+    }
+  
+    .destaque-icone {
+      align-self: center;
+      font-size: 100px;
+    }
+  
+    .secao {
+      padding: 45px 6%;
+    }
+  
+    .categorias {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* preferência do usuário por menos animações */
+  @media (prefers-reduced-motion: reduce) {
+    .destaque-icone {
+      animation: none;
+    }
+  
+    .botao,
+    .categoria {
+      transition: none;
+    }
+  }
+  

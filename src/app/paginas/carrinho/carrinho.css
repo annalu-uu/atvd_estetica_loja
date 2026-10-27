@@ -1,0 +1,97 @@
+
+/* apresentação da página do carrinho */
+.carrinho {
+    padding: 55px 8%;
+    color: #493653;
+  }
+  
+  /* título e descrição da página */
+  .titulo-carrinho {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .titulo-carrinho span {
+    color: #8053a0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  
+  .titulo-carrinho h2 {
+    margin: 10px 0;
+    color: #593675;
+    font-size: 32px;
+  }
+  
+  .titulo-carrinho p {
+    color: #876a9b;
+    line-height: 1.7;
+  }
+  
+  /* mensagem do carrinho vazio */
+  .carrinho-vazio {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    border: 1px solid #e5d7f0;
+    border-radius: 14px;
+    background: #ffffff;
+    text-align: center;
+  }
+  
+  
+  /* flor */
+.carrinho-icone {
+    display: inline-block;
+    color: #9664b8;
+    font-size: 42px;
+    animation: girar-flor-carrinho 4s linear infinite;
+  }
+    
+  
+  /* título da mensagem */
+  .carrinho-vazio h3 {
+    color: #593675;
+  }
+  
+  /* descrição da mensagem */
+  .carrinho-vazio p {
+    color: #876a9b;
+    line-height: 1.7;
+  }
+  
+  /* link para acessar os produtos */
+  .carrinho-vazio a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #70458f;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .carrinho-vazio a:hover {
+    color: #a77ac7;
+    text-decoration: underline;
+  }
+  
+  /* adapta a página para telas menores */
+  @media (max-width: 760px) {
+    .carrinho {
+      padding: 45px 6%;
+    }
+  }
+
+
+/* animação da flor do carrinho */
+@keyframes girar-flor-carrinho {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  

@@ -1,254 +1,102 @@
-
-/* Configuração geral do componente */
+/* configuração geral do componente */
 :host {
-    display: block;
-    min-height: 100vh;
-    color: #493653;
+  display: block;
+  min-height: 100vh;
+  color: #493653;
+}
+/* cabeçalho da loja */
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 20px 7%;
+  background: #ffffff;
+  box-shadow: 0 2px 12px #59367515;
+  box-sizing: border-box;
+}
+
+/* agrupa a flor pequena e o nome da loja */
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* flor pequena: cor, tamanho e rotação */
+.marca-icone {
+  display: inline-block;
+  color: #9664b8;
+  font-size: 38px;
+  animation: girar-flor 10s linear infinite;
+}
+
+/* nome da loja */
+.marca h1 {
+  margin: 0;
+  color: #593675;
+  font-size: 25px;
+}
+
+/* subtítulo da loja */
+.marca p {
+  margin: 3px 0 0;
+  color: #887492;
+  font-size: 13px;
+}
+
+/* menu de navegação */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+/* links do menu */
+.menu a {
+  color: #70458f;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* efeito ao passar o mouse nos links do menu */
+.menu a:hover {
+  color: #a77ac7;
+}
+
+/* animação da flor pequena do cabeçalho */
+@keyframes girar-flor {
+  from {
+    transform: rotate(0deg);
   }
-  
-  /* Cabeçalho da loja */
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* rodapé */
+.rodape {
+  padding: 25px;
+  background: #593675;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* espaçamento dos textos do rodapé */
+.rodape p {
+  margin: 5px;
+}
+
+/* ajustes do cabeçalho em celulares e telas menores */
+@media (max-width: 760px) {
   .cabecalho {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    padding: 20px 7%;
-    background: #ffffff;
-    box-shadow: 0 2px 12px #59367515;
+    align-items: flex-start;
+    flex-direction: column;
   }
-  
-  /* Agrupa a flor pequena e o nome da loja */
-  .marca {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  /* Flor pequena: cor, tamanho e rotação */
-  .marca-icone {
-    display: inline-block;
-    color: #9664b8;
-    font-size: 38px;
-    animation: girar-flor 10s linear infinite;
-  }
-  
-  /* Nome da loja */
-  .marca h1 {
-    margin: 0;
-    color: #593675;
-    font-size: 25px;
-  }
-  
-  /* Subtítulo da loja */
-  .marca p {
-    margin: 3px 0 0;
-    color: #887492;
-    font-size: 13px;
-  }
-  
-  /* Menu de navegação */
+
   .menu {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 22px;
+    gap: 14px;
   }
-  
-  /* Links do menu e dos cartões */
-  .menu a,
-  .categoria a {
-    color: #70458f;
-    font-weight: 600;
-    text-decoration: none;
-  }
-  
-  /* Efeito ao passar o mouse nos links */
-  .menu a:hover,
-  .categoria a:hover {
-    color: #a77ac7;
-  }
-  
-  /* Seção principal da página */
-  .destaque {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    min-height: 350px;
-    padding: 55px 10%;
-    background: #f3ecfa;
-  }
-  
-  /* Limita a largura do texto principal */
-  .destaque-conteudo {
-    max-width: 560px;
-  }
-  
-  /* Etiqueta e título pequeno */
-  .etiqueta,
-  .titulo-secao span {
-    color: #8053a0;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2px;
-  }
-  
-  /* Título principal */
-  .destaque h2 {
-    margin: 18px 0;
-    color: #593675;
-    font-size: clamp(32px, 5vw, 48px);
-    line-height: 1.15;
-  }
-  
-  /* Parágrafo principal */
-  .destaque p {
-    max-width: 445px;
-    line-height: 1.8;
-  }
-  
-  /* Botão Conhecer catálogo */
-  .botao {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 13px 22px;
-    border-radius: 8px;
-    background: #8053a0;
-    color: #ffffff;
-    font-weight: 600;
-    text-decoration: none;
-  }
-  
-  /* Efeito ao passar o mouse no botão */
-  .botao:hover {
-    background: #593675;
-  }
-  
-  /* Flor grande da página inicial */
-  .destaque-icone {
-    display: inline-block;
-    color: #c8a2e0;
-    font-size: clamp(100px, 20vw, 210px);
-    animation: girar-flor 10s linear infinite;
-  }
-  
-  /* Animação usada pelas duas flores */
-  @keyframes girar-flor {
-    from {
-      transform: rotate(0deg);
-    }
-  
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  /* Seção Nossa loja */
-  .secao {
-    padding: 55px 8%;
-  }
-  
-  /* Título e descrição da seção */
-  .titulo-secao {
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  
-  /* Título Nossa loja */
-  .titulo-secao h2 {
-    margin: 10px 0;
-    color: #593675;
-    font-size: 32px;
-  }
-  
-  /* Descrições da seção e dos cartões */
-  .titulo-secao p,
-  .categoria p {
-    color: #876a9b;
-    line-height: 1.7;
-  }
-  
-  /* Organiza os cartões em três colunas */
-  .categorias {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-  }
-  
-  
-  /* Aparência dos cartões */
-  .categoria {
-    padding: 28px;
-    border: 1px solid #e5d7f0;
-    border-radius: 14px;
-    background: #ffffff;
-    box-shadow: 0 5px 20px #5936750a;
-
-    /* Deixa os efeitos visuais suaves */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  /* Efeito ao passar o mouse nos cartões */
-  .categoria:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px #59367520;
-  }
-
-  
-  /* Ícones dos cartões */
-  .categoria-icone {
-    color: #9664b8;
-    font-size: 35px;
-  }
-  
-  /* Títulos dos cartões */
-  .categoria h3 {
-    color: #5a3777;
-  }
-  
-  /* Espaçamento dos links dos cartões */
-  .categoria a {
-    display: inline-block;
-    margin-top: 10px;
-  }
-  
-  /* Rodapé */
-  .rodape {
-    padding: 25px;
-    background: #593675;
-    color: #ffffff;
-    text-align: center;
-  }
-  
-  /* Espaçamento dos textos do rodapé */
-  .rodape p {
-    margin: 5px;
-  }
-  
-  /* Ajustes para celulares e telas menores */
-  
-  @media (max-width: 760px) {
-    .cabecalho {
-      align-items: flex-start;
-      flex-direction: column;
-    }
-  
-    .menu {
-      gap: 14px;
-    }
-  
-    .destaque {
-      padding: 40px 7%;
-    }
-  
-    /* Mantém o comportamento original: esconde a flor grande
-       em telas com largura de até 760px */
-    .destaque-icone {
-      display: none;
-    }
-  
-    /* Mostra os cartões um abaixo do outro */
-    .categorias {
-      grid-template-columns: 1fr;
-    }
-  }
-  
+}

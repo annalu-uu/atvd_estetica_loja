@@ -2,87 +2,32 @@
 <header class="cabecalho">
   <div class="marca">
     <span class="marca-icone">❀</span>
+
     <div>
-
-      <h1>Minha Loja</h1>
-
+      <h1>Purple Bomb</h1>
       <p>Estética &amp; Bem-Estar</p>
-
     </div>
   </div>
 
+  <!-- menu de navegação da loja -->
   <nav class="menu">
-
-    <a href="#inicio">Início</a>
-
-    <a href="#produtos">Produtos</a>
-
-    <a href="#servicos">Serviços</a>
-
-    <a href="#pedidos">Meus pedidos</a>
-
-    <a href="#admin">Administrativo</a>
-
+    <a routerLink="/" fragment="inicio">Início</a>
+    <a routerLink="/produtos">Produtos</a>
+    <a routerLink="/servicos">Serviços</a>
+    <a routerLink="/clientes">Clientes</a>
+    <a routerLink="/pedidos">Meus pedidos</a>
+    <a routerLink="/administrativo">Administrativo</a>
+    <a routerLink="/carrinho">Carrinho</a>
+    <a routerLink="/pedidos">Pedidos</a>
   </nav>
 </header>
 
 <main>
-  <section class="destaque" id="inicio">
-    <div class="destaque-conteudo">
-      <span class="etiqueta">Cuidado e bem-estar</span>
-
-      <h2>Seu momento de<br/>cuidar de você.</h2>
-
-      <p> Conheça nossos produtos e serviços preparados 
-        para valorizar seu bem-estar. </p>
-
-      <a class="botao" href="#produtos">Conhecer catálogo</a>
-    </div>
-
-    <div class="destaque-icone" aria-hidden="true">
-      ❀
-    </div>
-
-  </section>
-
-  <section class="secao" id="produtos">
-
-    <div class="titulo-secao">
-      
-      <span>DESCUBRA</span>
-      <h2>Nossa loja</h2>
-      <p>Encontre produtos e serviços para o seu cuidado diário.</p>
-    </div>
-
-    <div class="categorias">
-
-      <!-- Cartão que apresenta os serviços da loja -->
-      <article class="categoria">
-        <div class="categoria-icone">♡</div>
-        <h3>Produtos</h3>
-        <p>Conheça os produtos disponíveis em nossa loja.</p>
-        <a href="#produtos">Ver produtos</a>
-      </article>
-
-      <article class="categoria" id="servicos">
-        <div class="categoria-icone"> ✧ </div>
-        <h3>Serviços</h3>
-        <p>Descubra os serviços de estética e bem-estar.</p>
-        <a href="#servicos">Ver serviços</a>
-      </article>
-
-      <article class="categoria" id="pedidos">
-        <div class="categoria-icone"> ▤ </div>
-        <h3>Meus pedidos</h3>
-        <p>Acompanhe suas compras e consulte seus pedidos.</p>
-        <a href="#pedidos">Consultar pedidos</a>
-      </article>
-
-    </div>
-  </section>
+  <!-- espaço onde exibe a página selecionada pela rota -->
+  <router-outlet />
 </main>
 
 <footer class="rodape">
-  <p>Minha Loja — Estética &amp; Bem-Estar</p>
+  <p>Purple Bomb — Estética &amp; Bem-Estar</p>
   <p>Cuidado, beleza e bem-estar em um só lugar.</p>
 </footer>

@@ -1,0 +1,104 @@
+
+/* apresentação da página de clientes */
+.clientes {
+    padding: 65px 8%;
+    background-color: #ffffff;
+    color: #493653;
+  }
+  
+  /* título e descrição da página */
+  .titulo-clientes {
+    margin-bottom: 35px;
+    text-align: center;
+  }
+  
+  .titulo-clientes span {
+    color: #9664b8;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+  
+  .titulo-clientes h2 {
+    margin: 10px 0;
+    color: #593675;
+    font-size: 34px;
+  }
+  
+  .titulo-clientes p {
+    line-height: 1.7;
+  }
+  
+  /* organização do formulário */
+  .formulario-clientes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #eadcf5;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 24px #59367512;
+  }
+  
+  /* organização de cada campo */
+  .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  /* rótulos dos campos */
+  .campo label {
+    color: #593675;
+    font-weight: 600;
+  }
+  
+  /* campos de preenchimento */
+  .campo input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #d8c6e7;
+    border-radius: 10px;
+    outline: none;
+    color: #493653;
+    font: inherit;
+  }
+  
+  /* destaque do campo selecionado */
+  .campo input:focus {
+    border-color: #9664b8;
+    box-shadow: 0 0 0 3px #9664b820;
+  }
+  
+  /* botão de cadastro */
+  .formulario-clientes button {
+    padding: 13px 24px;
+    border: none;
+    border-radius: 24px;
+    background-color: #8052a0;
+    color: #ffffff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  /* efeito ao passar o mouse no botão */
+  .formulario-clientes button:hover {
+    background-color: #593675;
+  }
+  
+  /* adapta o formulário para celulares */
+  @media (max-width: 760px) {
+    .clientes {
+      padding: 45px 6%;
+    }
+  
+    .formulario-clientes {
+      padding: 22px;
+    }
+  }
+  

@@ -1,0 +1,81 @@
+
+/* apresentação da página de pedidos */
+.pedidos {
+    padding: 55px 8%;
+    color: #493653;
+  }
+  
+  /* título e descrição da página */
+  .titulo-pedidos {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .titulo-pedidos span {
+    color: #8053a0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  
+  .titulo-pedidos h2 {
+    margin: 10px 0;
+    color: #593675;
+    font-size: 32px;
+  }
+  
+  .titulo-pedidos p {
+    color: #876a9b;
+    line-height: 1.7;
+  }
+  
+  /* mensagem exibida quando não existem pedidos */
+  .pedidos-vazios {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    border: 1px solid #e5d7f0;
+    border-radius: 14px;
+    background: #ffffff;
+    text-align: center;
+  }
+  
+  /* ícone decorativo da página */
+  .pedidos-icone {
+    display: inline-block;
+    color: #9664b8;
+    font-size: 42px;
+  }
+  
+  /* título da mensagem */
+  .pedidos-vazios h3 {
+    color: #593675;
+  }
+  
+  /* descrição da mensagem */
+  .pedidos-vazios p {
+    color: #876a9b;
+    line-height: 1.7;
+  }
+  
+  /* link para acessar os produtos */
+  .pedidos-vazios a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #70458f;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .pedidos-vazios a:hover {
+    color: #a77ac7;
+    text-decoration: underline;
+  }
+  
+  /* adapta a página para telas menores */
+  @media (max-width: 760px) {
+    .pedidos {
+      padding: 45px 6%;
+    }
+  }
+  

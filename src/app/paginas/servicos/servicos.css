@@ -1,0 +1,90 @@
+
+/* apresentação da página de serviços */
+.servicos {
+    padding: 65px 8%;
+    background-color: #ffffff;
+  }
+  
+  /* título e descrição da página */
+  .titulo-servicos {
+    margin-bottom: 35px;
+    text-align: center;
+  }
+  
+  .titulo-servicos span {
+    color: #9664b8;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+  
+  .titulo-servicos h2 {
+    margin: 10px 0;
+    color: #593675;
+    font-size: 34px;
+  }
+  
+  .titulo-servicos p {
+    color: #493653;
+    line-height: 1.7;
+  }
+  
+  /* organização dos cartões */
+  .lista-servicos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+  
+  /* cartão individual */
+  .cartao-servico {
+    padding: 30px 24px;
+    border: 1px solid #eadcf5;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 24px #59367512;
+    transition: transform 0.3s ease;
+  }
+  
+  /* efeito ao passar o mouse */
+  .cartao-servico:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* ícone decorativo do serviço */
+  .servico-icone {
+    margin-bottom: 15px;
+    color: #9664b8;
+    font-size: 36px;
+  }
+  
+  /* título do cartão */
+  .cartao-servico h3 {
+    color: #593675;
+    font-size: 22px;
+  }
+  
+  /* descrição do cartão */
+  .cartao-servico p {
+    color: #493653;
+    line-height: 1.7;
+  }
+  
+  /* adapta os cartões para celulares */
+  @media (max-width: 760px) {
+    .servicos {
+      padding: 45px 6%;
+    }
+  
+    .lista-servicos {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* respeita a preferência por menos animações */
+  @media (prefers-reduced-motion: reduce) {
+    .cartao-servico {
+      transition: none;
+    }
+  }
+  
