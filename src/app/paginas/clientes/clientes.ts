@@ -40,6 +40,9 @@ export class Clientes {
 
   // cadastra a pessoa e seu endereço
   cadastrarCliente(formulario: NgForm): void {
+    console.log('O método cadastrarCliente foi chamado!');
+    console.log('Formulário válido:', formulario.valid);
+
     if (formulario.invalid || this.carregando) {
       this.mensagem = 'Preencha corretamente os campos obrigatórios.';
       return;
@@ -71,6 +74,7 @@ export class Clientes {
       next: () => {
         this.mensagem = 'Cliente cadastrado com sucesso!';
         this.limparFormulario(formulario);
+        this.carregando = false;
       },
       error: (erro) => {
         console.error('Erro ao cadastrar cliente:', erro);
@@ -79,8 +83,7 @@ export class Clientes {
           erro.error?.title ||
           erro.error?.mensagem ||
           'Não foi possível cadastrar o cliente. Verifique a API e os dados informados.';
-      },
-      complete: () => {
+
         this.carregando = false;
       },
     });
