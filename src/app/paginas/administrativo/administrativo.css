@@ -1,0 +1,99 @@
+
+/* apresentação da área administrativa */
+.administrativo {
+    padding: 55px 8%;
+    color: #493653;
+  }
+  
+  /* título e descrição da página */
+  .titulo-administrativo {
+    margin-bottom: 35px;
+    text-align: center;
+  }
+  
+  .titulo-administrativo span {
+    color: #8053a0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  
+  .titulo-administrativo h2 {
+    margin: 10px 0;
+    color: #593675;
+    font-size: 32px;
+  }
+  
+  .titulo-administrativo p {
+    color: #876a9b;
+    line-height: 1.7;
+  }
+  
+  /* organiza os cartões em colunas */
+  .lista-administrativa {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  /* cartão de cada área administrativa */
+  .cartao-administrativo {
+    padding: 30px 24px;
+    border: 1px solid #e5d7f0;
+    border-radius: 14px;
+    background: #ffffff;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  /* efeito ao passar o mouse no cartão */
+  .cartao-administrativo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px #59367515;
+  }
+  
+  /* ícones dos cartões */
+  .administrativo-icone {
+    color: #9664b8;
+    font-size: 38px;
+  }
+  
+  /* títulos dos cartões */
+  .cartao-administrativo h3 {
+    color: #593675;
+  }
+  
+  /* descrições dos cartões */
+  .cartao-administrativo p {
+    color: #876a9b;
+    line-height: 1.7;
+  }
+  
+  /* links dos cartões */
+  .cartao-administrativo a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #70458f;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  /* efeito ao passar o mouse nos links */
+  .cartao-administrativo a:hover {
+    color: #a77ac7;
+    text-decoration: underline;
+  }
+  
+  /* adapta os cartões para telas menores */
+  @media (max-width: 650px) {
+    .administrativo {
+      padding: 45px 6%;
+    }
+  
+    .lista-administrativa {
+      grid-template-columns: 1fr;
+    }
+  }
+  

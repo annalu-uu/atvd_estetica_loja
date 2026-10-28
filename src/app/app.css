@@ -1,9 +1,12 @@
+
 /* configuração geral do componente */
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   color: #493653;
 }
+
 /* cabeçalho da loja */
 .cabecalho {
   display: flex;
@@ -99,4 +102,9 @@
   .menu {
     gap: 14px;
   }
+}
+
+/* ocupa o espaço disponível entre o cabeçalho e o rodapé */
+main {
+  flex: 1;
 }
