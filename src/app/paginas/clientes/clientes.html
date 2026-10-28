@@ -6,23 +6,16 @@
   <div class="titulo-clientes">
     <span>Purple Bomb</span>
     <h2>Cadastro de clientes</h2>
-    <p>Consulte e organize as informações dos seus clientes.</p>
   </div>
 
-  
   <!-- formulário responsável por cadastrar um cliente -->
+  <!-- cria uma referência ao formulário para verificar sua validade -->
+  <!-- chama o método de cadastro quando o formulário é enviado -->
   <form
-    class="formulario-clientes"
-    #formCliente="ngForm"
-    (ngSubmit)="cadastrarCliente(formCliente)"
-  >
-
-    <!-- cria uma referência ao formulário para verificar sua validade -->
-    #formCliente="ngForm"
-
-    <!-- chama o método de cadastro quando o formulário é enviado -->
-    (ngSubmit)="cadastrarCliente(formCliente)"
-  >
+  class="formulario-clientes"
+  #formCliente="ngForm"
+  (ngSubmit)="cadastrarCliente(formCliente)"
+>
 
     <!-- campo para informar o nome completo -->
     <div class="campo">
