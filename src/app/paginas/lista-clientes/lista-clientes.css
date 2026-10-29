@@ -1,0 +1,38 @@
+
+.lista-clientes {
+    padding: 32px;
+    color: #493653;
+  }
+  
+  .lista-clientes h2 {
+    color: #593675;
+    margin-bottom: 24px;
+  }
+  
+  .tabela-responsiva {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+  }
+  
+  th,
+  td {
+    padding: 12px;
+    border-bottom: 1px solid #e5dced;
+    text-align: left;
+  }
+  
+  th {
+    background: #f3ecfa;
+    color: #593675;
+  }
+  
+  tbody tr:hover {
+    background: #faf7fd;
+  }
+  

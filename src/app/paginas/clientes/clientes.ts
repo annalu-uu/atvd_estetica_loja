@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
   styleUrl: './clientes.css',
 })
 export class Clientes {
+
   // endereço da API de pessoas
   private readonly apiUrl = 'https://localhost:7161/api/Pessoa';
 

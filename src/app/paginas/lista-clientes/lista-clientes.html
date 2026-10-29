@@ -1,0 +1,49 @@
+<section class="lista-clientes">
+    <h2>Clientes cadastrados</h2>
+  
+    <p *ngIf="carregando">Carregando clientes...</p>
+  
+    <p *ngIf="mensagem" role="status">
+      {{ mensagem }}
+    </p>
+  
+    <div class="tabela-responsiva" *ngIf="!carregando && clientes.length > 0">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>CEP</th>
+            <th>Número</th>
+            <th>Complemento</th>
+          </tr>
+        </thead>
+  
+        <tbody>
+          <tr *ngFor="let cliente of clientes">
+            <td>{{ cliente.idpessoa }}</td>
+            <td>{{ cliente.nome }}</td>
+            <td>{{ cliente.cpf }}</td>
+            <td>{{ cliente.email }}</td>
+            <td>{{ cliente.telefone }}</td>
+  
+            <td>
+              {{ cliente.enderecos?.[0]?.cep || '-' }}
+            </td>
+  
+            <td>
+              {{ cliente.enderecos?.[0]?.numero || '-' }}
+            </td>
+  
+            <td>
+              {{ cliente.enderecos?.[0]?.complemento || '-' }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
