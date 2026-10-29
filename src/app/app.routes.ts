@@ -9,7 +9,6 @@ import { Carrinho } from './paginas/carrinho/carrinho';
 import { Pedidos } from './paginas/pedidos/pedidos';
 import { Administrativo } from './paginas/administrativo/administrativo';
 import { ListaClientes } from './paginas/lista-clientes/lista-clientes';
-import { Atendimentos } from './paginas/atendimentos/atendimentos';
 
 // define as rotas da aplicação
 export const routes: Routes = [
@@ -21,7 +20,6 @@ export const routes: Routes = [
   { path: 'pedidos', component: Pedidos },
   { path: 'administrativo', component: Administrativo },
   { path: 'lista-clientes', component: ListaClientes },
-  { path: 'atendimentos', component: Atendimentos },
 
   // redireciona caminhos desconhecidos para a página inicial
   { path: '**', redirectTo: '' }

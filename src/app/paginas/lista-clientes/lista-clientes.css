@@ -1,12 +1,12 @@
 
 .lista-clientes {
-    padding: 32px;
+    padding: 24px;
     color: #493653;
   }
   
   .lista-clientes h2 {
     color: #593675;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
   
   .tabela-responsiva {
@@ -23,7 +23,7 @@
   th,
   td {
     padding: 12px;
-    border-bottom: 1px solid #e5dced;
+    border: 1px solid #e2d5ed;
     text-align: left;
   }
   
@@ -33,6 +33,6 @@
   }
   
   tbody tr:hover {
-    background: #faf7fd;
+    background: #faf6ff;
   }
   

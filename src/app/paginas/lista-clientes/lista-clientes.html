@@ -1,3 +1,4 @@
+
 <section class="lista-clientes">
     <h2>Clientes cadastrados</h2>
   
@@ -7,7 +8,10 @@
       {{ mensagem }}
     </p>
   
-    <div class="tabela-responsiva" *ngIf="!carregando && clientes.length > 0">
+    <div
+      class="tabela-responsiva"
+      *ngIf="!carregando && clientes.length > 0"
+    >
       <table>
         <thead>
           <tr>
@@ -29,18 +33,9 @@
             <td>{{ cliente.cpf }}</td>
             <td>{{ cliente.email }}</td>
             <td>{{ cliente.telefone }}</td>
-  
-            <td>
-              {{ cliente.enderecos?.[0]?.cep || '-' }}
-            </td>
-  
-            <td>
-              {{ cliente.enderecos?.[0]?.numero || '-' }}
-            </td>
-  
-            <td>
-              {{ cliente.enderecos?.[0]?.complemento || '-' }}
-            </td>
+            <td>{{ cliente.enderecos?.[0]?.cep || '-' }}</td>
+            <td>{{ cliente.enderecos?.[0]?.numero || '-' }}</td>
+            <td>{{ cliente.enderecos?.[0]?.complemento || '-' }}</td>
           </tr>
         </tbody>
       </table>

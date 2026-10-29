@@ -1,6 +1,7 @@
+
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 
 // representa o endereço retornado pela API
 interface Endereco {
@@ -23,6 +24,7 @@ interface Cliente {
   enderecos: Endereco[];
 }
 
+// configura o componente de listagem de clientes
 @Component({
   selector: 'app-lista-clientes',
   standalone: true,
@@ -34,40 +36,64 @@ export class ListaClientes implements OnInit {
   // endereço da API de pessoas
   private readonly apiUrl = 'https://localhost:7161/api/Pessoa';
 
-  // armazena os clientes retornados pela API
+  // armazena os clientes recebidos da API
   clientes: Cliente[] = [];
 
-  // controla mensagens e carregamento
+  // controla as mensagens exibidas na página
   mensagem = '';
+
+  // indica se a consulta está em andamento
   carregando = false;
 
-  // recebe o recurso necessário para consultar a API
-  constructor(private http: HttpClient) {}
+  // recebe os recursos necessários para consultar a API
+  constructor(
+    private http: HttpClient,
+    private detector: ChangeDetectorRef
+  ) {}
 
-  // consulta os clientes quando a página é aberta
+  // executa a consulta quando a página é aberta
   ngOnInit(): void {
     this.listarClientes();
   }
 
-  // busca a lista de clientes no backend
+  // busca os clientes cadastrados no backend
   listarClientes(): void {
     this.carregando = true;
     this.mensagem = '';
 
+    // envia uma requisição GET para a API
     this.http.get<Cliente[]>(this.apiUrl).subscribe({
+      // executa quando a consulta é bem-sucedida
       next: (dados) => {
+        // guarda os clientes recebidos
         this.clientes = dados;
+
+        // encerra o carregamento
         this.carregando = false;
 
+        // solicita a atualização da visualização
+        this.detector.detectChanges();
+
+        // informa quando não existem clientes
         if (dados.length === 0) {
           this.mensagem = 'Nenhum cliente cadastrado.';
         }
       },
+
+      // executa quando ocorre um erro na consulta
       error: (erro) => {
+        // registra os detalhes do erro no console
         console.error('Erro ao consultar clientes:', erro);
+
+        // informa o problema ao usuário
         this.mensagem =
           'Não foi possível carregar os clientes. Verifique se o backend está rodando.';
+
+        // encerra o carregamento
         this.carregando = false;
+
+        // solicita a atualização da visualização
+        this.detector.detectChanges();
       },
     });
   }
