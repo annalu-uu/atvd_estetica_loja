@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [RouterLink],
   selector: 'app-administrativo',
-  styleUrl: './administrativo.css',
+  standalone: true,
+  imports: [RouterLink],
   templateUrl: './administrativo.html',
+  styleUrl: './administrativo.css',
 })
-export class Administrativo {}
+export class Administrativo {
+}

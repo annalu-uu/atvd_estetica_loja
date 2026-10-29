@@ -1,0 +1,68 @@
+<section class="atendimentos">
+    <header class="titulo-atendimentos">
+      <span>PURPLE BOMB</span>
+      <h2>Atendimentos</h2>
+      <p>Consulte os atendimentos registrados na loja.</p>
+    </header>
+  
+    <!-- mensagem durante a consulta -->
+    <p *ngIf="carregando" role="status">
+      Carregando atendimentos...
+    </p>
+  
+    <!-- mensagem de retorno ou erro -->
+    <p *ngIf="mensagem" role="status">
+      {{ mensagem }}
+    </p>
+  
+    <!-- lista de atendimentos -->
+    <div
+      class="lista-atendimentos"
+      *ngIf="!carregando && atendimentos.length > 0"
+    >
+      <article
+        class="cartao-atendimento"
+        *ngFor="let atendimento of atendimentos"
+      >
+        <h3>Atendimento #{{ atendimento.idAtendimento }}</h3>
+  
+        <p>
+          <strong>Cliente:</strong>
+          {{ atendimento.nomePessoa }}
+        </p>
+  
+        <p>
+          <strong>Data:</strong>
+          {{ atendimento.dataAtendimento | date:'dd/MM/yyyy' }}
+        </p>
+  
+        <p>
+          <strong>Status:</strong>
+          {{ atendimento.statusAtendimento }}
+        </p>
+  
+        <h4>Itens do atendimento</h4>
+  
+        <ul>
+          <li *ngFor="let item of atendimento.itens">
+            {{ item.item }} — {{ item.nomeFuncionario }}
+            <br />
+            Quantidade: {{ item.quantidade }}
+            <br />
+            Valor unitário:
+            {{ item.valorUnitario | currency:'BRL':'symbol':'1.2-2' }}
+          </li>
+        </ul>
+      </article>
+    </div>
+  
+    <button
+      type="button"
+      class="botao-atualizar"
+      (click)="listarAtendimentos()"
+      [disabled]="carregando"
+    >
+      Atualizar lista
+    </button>
+  </section>
+  

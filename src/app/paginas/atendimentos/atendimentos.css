@@ -1,0 +1,64 @@
+.atendimentos {
+    padding: 32px;
+    color: #493653;
+  }
+  
+  .titulo-atendimentos {
+    margin-bottom: 28px;
+  }
+  
+  .titulo-atendimentos span {
+    color: #9664b8;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  
+  .titulo-atendimentos h2 {
+    color: #593675;
+    margin: 8px 0;
+  }
+  
+  .titulo-atendimentos p {
+    margin-top: 8px;
+  }
+  
+  .lista-atendimentos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  
+  .cartao-atendimento {
+    padding: 22px;
+    background: #ffffff;
+    border: 1px solid #e5dced;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px #59367510;
+  }
+  
+  .cartao-atendimento h3,
+  .cartao-atendimento h4 {
+    color: #593675;
+  }
+  
+  .cartao-atendimento li {
+    margin-bottom: 14px;
+    line-height: 1.7;
+  }
+  
+  .botao-atualizar {
+    margin-top: 24px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #593675;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  .botao-atualizar:disabled {
+    opacity: 0.6;
+    cursor: wait;
+  }
+  
