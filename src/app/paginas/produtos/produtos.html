@@ -1,19 +1,41 @@
+
 <!-- título da página de produtos -->
 <section class="secao">
-    <div class="titulo-secao">
-         <!-- marca um trecho pequeno -->
-      <span>Purple Bomb</span>
-      <h2>Nossos produtos</h2>
-      <p>Conheça os produtos disponíveis para o seu cuidado e bem-estar.</p>
-    </div>
+  <div class="titulo-secao">
+    <!-- marca um trecho pequeno -->
+    <span>Purple Bomb</span>
+    <h2>Nossos produtos</h2>
+    <p>Conheça os produtos disponíveis para o seu cuidado e bem-estar.</p>
+  </div>
 
-  
-    <!-- mensagem que aparece enquanto o catálogo é preparado -->
-    <div class="mensagem-vazia">
+  <!-- mensagem exibida durante o carregamento -->
+  <div class="mensagem-vazia" *ngIf="carregando">
+    <span class="mensagem-icone">♡</span>
+    <h3>Preparando seu catálogo...</h3>
+    <p>Aguarde enquanto buscamos os produtos.</p>
+  </div>
+
+  <!-- mensagem exibida se ocorrer um erro -->
+  <div class="mensagem-vazia" *ngIf="erro">
+    <h3>{{ erro }}</h3>
+    <a routerLink="/">Voltar para o início</a>
+  </div>
+
+  <!-- lista de produtos recebidos da API -->
+  <div class="lista-produtos" *ngIf="!carregando && !erro">
+    <article class="card-produto" *ngFor="let produto of produtos">
+      <span class="mensagem-icone">♡</span>
+      <h3>{{ produto.item }}</h3>
+      <p>{{ produto.descricaoItem }}</p>
+      <strong>{{ produto.preco | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</strong>
+    </article>
+
+    <!-- mensagem exibida quando não há produtos cadastrados -->
+    <div class="mensagem-vazia" *ngIf="produtos.length === 0">
       <span class="mensagem-icone">♡</span>
       <h3>Em breve, novidades para você!</h3>
-      <p>Estamos preparando nosso catálogo de produtos.</p>
+      <p>Nenhum produto ativo foi encontrado no catálogo.</p>
       <a routerLink="/">Voltar para o início</a>
     </div>
-  </section>
-  
+  </div>
+</section>
