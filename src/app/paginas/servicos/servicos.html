@@ -1,35 +1,58 @@
 <!-- apresentação da página de serviços -->
 <section class="servicos">
-    <div class="titulo-servicos">
-      <span>Purple Bomb</span>
-      <h2>Nossos serviços</h2>
-      <p>Descubra opções de cuidado e bem-estar 
-        para o seu dia a dia.</p>
-    </div>
-  
-    <!-- cartão de apresentação dos serviços -->
-    <div class="lista-servicos">
 
-      <article class="cartao-servico">
-        <div class="servico-icone" aria-hidden="true">✧</div>
-        <h3>Cuidados com a pele</h3>
-        <p>Conheça nossas opções de cuidados voltados 
-        à beleza e ao bem-estar.</p>
-      </article>
-  
-      <article class="cartao-servico">
-        <div class="servico-icone" aria-hidden="true">❀</div>
-        <h3>Beleza e autocuidado</h3>
-        <p>Encontre opções para reservar um momento 
-        especial para você.</p>
-      </article>
-  
-      <article class="cartao-servico">
-        <div class="servico-icone" aria-hidden="true">♡</div>
-        <h3>Relaxamento</h3>
-        <p>Descubra alternativas para incluir o 
-        bem-estar em sua rotina.</p>
-      </article>
+  <!-- título e descrição da página -->
+  <div class="titulo-servicos">
+    <span>Purple Bomb</span>
+    <h2>Nossos serviços</h2>
+    <p>
+      Descubra opções de cuidado e bem-estar
+      para o seu dia a dia.
+    </p>
+  </div>
+
+  <!-- mensagem exibida enquanto os serviços são carregados -->
+  <div class="mensagem-vazia" *ngIf="carregando">
+    <span class="servico-icone">♡</span>
+    <h3>Preparando nossos serviços...</h3>
+    <p>Aguarde enquanto buscamos os serviços disponíveis.</p>
+  </div>
+
+  <!-- mensagem exibida caso ocorra um erro na consulta -->
+  <div class="mensagem-vazia" *ngIf="erro">
+    <h3>{{ erro }}</h3>
+    <a routerLink="/">Voltar para o início</a>
+  </div>
+
+  <!-- lista de serviços recebidos da API -->
+  <div class="lista-servicos" *ngIf="!carregando && !erro">
+
+    <!-- cria um cartão para cada serviço cadastrado -->
+    <article class="cartao-servico" *ngFor="let servico of servicos">
+
+      <!-- ícone decorativo do serviço -->
+      <div class="servico-icone" aria-hidden="true">❀</div>
+
+      <!-- apresenta o nome do serviço -->
+      <h3>{{ servico.item }}</h3>
+
+      <!-- apresenta a descrição do serviço -->
+      <p>{{ servico.descricaoItem }}</p>
+
+      <!-- apresenta o preço formatado em reais -->
+      <strong>
+        {{ servico.preco | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
+      </strong>
+
+    </article>
+
+    <!-- mensagem exibida quando não existem serviços cadastrados -->
+    <div class="mensagem-vazia" *ngIf="servicos.length === 0">
+      <span class="servico-icone">♡</span>
+      <h3>Em breve, novidades para você!</h3>
+      <p>Nenhum serviço ativo foi encontrado no catálogo.</p>
+      <a routerLink="/">Voltar para o início</a>
     </div>
-  </section>
-  
+
+  </div>
+</section>
