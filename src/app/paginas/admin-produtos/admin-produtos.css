@@ -1,0 +1,86 @@
+/* área principal da página */
+.admin-produtos {
+    padding: 50px 8%;
+    min-height: 80vh;
+    background: #f8f4fc;
+  }
+  
+  /* título da página */
+  .titulo-admin-produtos {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  /* identificação da marca */
+  .titulo-admin-produtos span {
+    color: #9664b8;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+  
+  /* título principal */
+  .titulo-admin-produtos h2 {
+    color: #593675;
+    font-size: 32px;
+    margin: 12px 0;
+  }
+  
+  /* descrição do título */
+  .titulo-admin-produtos p {
+    color: #796987;
+    font-size: 16px;
+  }
+  
+  /* área da lista de produtos */
+  .lista-produtos-admin {
+    max-width: 900px;
+    margin: 50px auto 0;
+  }
+  
+  /* título da lista */
+  .lista-produtos-admin h2 {
+    color: #593675;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  /* cartão individual de produto */
+  .cartao-produto-admin {
+    background: #ffffff;
+    border: 1px solid #e8dcef;
+    border-left: 5px solid #9664b8;
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 18px;
+    box-shadow: 0 5px 15px #59367510;
+  }
+  
+  /* nome do produto */
+  .cartao-produto-admin h3 {
+    color: #593675;
+    margin-top: 0;
+  }
+  
+  /* descrição do produto */
+  .cartao-produto-admin p {
+    color: #796987;
+    line-height: 1.6;
+  }
+  
+  /* preço do produto */
+  .cartao-produto-admin strong {
+    color: #79509b;
+    font-size: 18px;
+  }
+  
+  /* adaptação para telas menores */
+  @media (max-width: 600px) {
+    .admin-produtos {
+      padding: 35px 5%;
+    }
+  
+    .titulo-admin-produtos h2 {
+      font-size: 26px;
+    }
+  }

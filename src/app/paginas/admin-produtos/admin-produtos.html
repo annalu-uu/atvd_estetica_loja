@@ -1,0 +1,47 @@
+<!-- área principal de gerenciamento de produtos -->
+<section class="admin-produtos">
+
+    <!-- título e descrição da página -->
+    <div class="titulo-admin-produtos">
+  
+      <!-- identificação da marca -->
+      <span>PURPLE BOMB</span>
+  
+      <!-- título principal -->
+      <h2>Gerenciar produtos</h2>
+  
+      <!-- descrição da página -->
+      <p>Consulte e mantenha os produtos da sua loja atualizados.</p>
+  
+    </div>
+  
+    <!-- área responsável por apresentar a lista de produtos -->
+    <div class="lista-produtos-admin">
+  
+      <!-- título da lista -->
+      <h2>Produtos cadastrados</h2>
+  
+      <!-- percorre a lista e apresenta cada produto ativo -->
+      <article class="cartao-produto-admin" *ngFor="let produto of produtos">
+  
+        <!-- apresenta o nome do produto -->
+        <h3>{{ produto.item }}</h3>
+  
+        <!-- apresenta a descrição do produto -->
+        <p>{{ produto.descricaoItem }}</p>
+  
+        <!-- apresenta o preço do produto no formato de moeda brasileira -->
+        <strong>
+          {{ produto.preco | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
+        </strong>
+  
+      </article>
+  
+      <!-- apresenta uma mensagem quando não existem produtos cadastrados -->
+      <div *ngIf="produtos.length === 0">
+        <p>Nenhum produto cadastrado.</p>
+      </div>
+  
+    </div>
+  
+  </section>

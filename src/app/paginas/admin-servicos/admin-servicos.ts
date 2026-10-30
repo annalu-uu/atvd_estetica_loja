@@ -149,6 +149,52 @@ export class AdminServicos implements OnInit {
     });
   }
 
+    // desativa um serviço sem excluir seu registro do banco
+    desativarServico(servico: Servico): void {
+
+      // solicita confirmação antes de desativar
+      if (!confirm(`Deseja realmente desativar o serviço ${servico.item}?`)) {
+        return;
+      }
+  
+      // prepara os dados do serviço com o status inativo
+      const servicoAtualizado = {
+        idcategoria: servico.idcategoria,
+        item: servico.item,
+        descricaoItem: servico.descricaoItem,
+        preco: servico.preco,
+        tipoItem: servico.tipoItem,
+        ativoProdutoServico: 'I'
+      };
+  
+      // envia a atualização para a API
+      this.http.put<void>(
+        `https://localhost:7161/api/Item/${servico.iditem}`,
+        servicoAtualizado
+      ).subscribe({
+  
+        // executa quando a desativação é realizada com sucesso
+        next: () => {
+  
+          // remove o serviço da lista de serviços ativos
+          this.servicos = this.servicos.filter(
+            item => item.iditem !== servico.iditem
+          );
+  
+          // atualiza a tela
+          this.cdr.detectChanges();
+  
+          alert('Serviço desativado com sucesso!');
+        },
+  
+        // executa caso ocorra algum erro
+        error: (erro) => {
+          console.error('Erro ao desativar serviço:', erro);
+          alert('Não foi possível desativar o serviço.');
+        }
+      });
+    }
+
   // cadastra um novo serviço na API
   cadastrarServico(): void {
 

@@ -146,45 +146,51 @@
   color: #79509b;
   font-size: 18px;
 }
-
-/* botão para editar o serviço */
+/* botões de ação dos serviços */
 .cartao-servico-admin button {
-  display: inline-block;
-  background-color: #9664b8;
-  color: #ffffff;
-  border: none;
-  border-radius: 10px;
-  padding: 13px 20px;
-  margin-top: 13px;
-  font-size: 13px;
-  font-weight: 60;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-/* efeito ao passar o mouse sobre o botão */
-.cartao-servico-admin button:hover {
-  background-color: #79509b;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px #59367530;
-}
-
-/* efeito ao clicar no botão */
-.cartao-servico-admin button:active {
-  transform: scale(0.97);
-}
-
-/* adaptação para telas menores */
-@media (max-width: 600px) {
-  .admin-servicos {
-    padding: 35px 5%;
+    display: inline-block;
+    background-color: #9664b8;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 13px 20px;
+    margin-top: 13px;
+    margin-right: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
   }
-
-  .titulo-admin-servicos h2 {
-    font-size: 26px;
+  
+  /* efeito ao passar o mouse sobre os botões */
+  .cartao-servico-admin button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px #59367530;
   }
-
-  .formulario-servico {
-    padding: 22px;
+  
+  /* botão para desativar o serviço */
+  .cartao-servico-admin button:last-child {
+    background-color: #b94b65;
   }
-}
+  
+  /* efeito ao passar o mouse sobre o botão desativar */
+  .cartao-servico-admin button:last-child:hover {
+    background-color: #96364e;
+  }
+  
+  .cartao-servico-admin button {
+    display: block;
+    width: 140px;
+    background-color: #9664b8;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 13px 20px;
+    margin-top: 13px;
+    margin-right: 0;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  

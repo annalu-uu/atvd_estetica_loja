@@ -10,6 +10,7 @@ import { Pedidos } from './paginas/pedidos/pedidos';
 import { Administrativo } from './paginas/administrativo/administrativo';
 import { ListaClientes } from './paginas/lista-clientes/lista-clientes';
 import { AdminServicos } from './paginas/admin-servicos/admin-servicos';
+import { AdminProdutos } from './paginas/admin-produtos/admin-produtos';
 
 // define as rotas da aplicação
 export const routes: Routes = [
@@ -22,6 +23,7 @@ export const routes: Routes = [
   { path: 'administrativo', component: Administrativo },
   { path: 'lista-clientes', component: ListaClientes },
   { path: 'admin-servicos', component: AdminServicos },
+  { path: 'admin-produtos', component: AdminProdutos},
 
   // redireciona caminhos desconhecidos para a página inicial
   { path: '**', redirectTo: '' }
