@@ -1,7 +1,16 @@
+// importa a função responsável por registrar os dados de localização no Angular
+import { registerLocaleData } from '@angular/common';
+
+// importa os dados de localização do idioma português
+import localePt from '@angular/common/locales/pt';
+
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
+
+// registra os dados do português do Brasil para permitir a formatação correta de números e moedas
+registerLocaleData(localePt, 'pt-BR');
 
 // representa os dados de um item recebido da API
 interface Item {
@@ -38,6 +47,7 @@ export class Produtos implements OnInit {
 
   // busca os produtos quando a página é aberta
   ngOnInit(): void {
+    console.log('A página de produtos foi carregada!');
     this.http.get<Item[]>('https://localhost:7161/api/Item')
       .subscribe({
         next: (dados) => {
