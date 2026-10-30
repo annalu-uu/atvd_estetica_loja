@@ -3,92 +3,109 @@
 
     <!-- título e descrição da página -->
     <div class="titulo-admin-servicos">
-          <!-- formulário para cadastrar um novo serviço -->
-  <form class="formulario-servico">
-
-    <!-- campo para informar o nome do serviço -->
-    <div class="campo-formulario">
-      <label for="nomeServico">Nome do serviço</label>
-      <input
-        type="text"
-        id="nomeServico"
-        name="nomeServico"
-        [(ngModel)]="novoServico.item"
-        placeholder="Ex.: Limpeza de pele"
-      >
-    </div>
-
-    <!-- campo para informar a descrição do serviço -->
-    <div class="campo-formulario">
-      <label for="descricaoServico">Descrição</label>
-      <textarea
-        id="descricaoServico"
-        name="descricaoServico"
-        [(ngModel)]="novoServico.descricaoItem"
-        placeholder="Descreva o serviço oferecido"
-      ></textarea>
-    </div>
-
-        <!-- campo para selecionar a categoria do serviço -->
-        <div class="campo-formulario">
-            <label for="categoriaServico">Categoria</label>
-            <select id="categoriaServico" name="categoriaServico"
-                [(ngModel)]="novoServico.idcategoria">
-                
-              <option value="2">Estética e Bem-Estar</option>
-            </select>
-          </div>
-
-    <!-- campo para informar o preço do serviço -->
-    <div class="campo-formulario">
-      <label for="precoServico">Preço (R$)</label>
-      <input
-        type="number"
-        id="precoServico"
-        name="precoServico"
-        [(ngModel)]="novoServico.preco"
-        min="0"
-        step="0.01"
-        placeholder="Ex.: 80,00"
-      >
-    </div>
-
-    <!-- botão que executa o cadastro do serviço -->
-<button type="button" (click)="cadastrarServico()"> Cadastrar serviço </button>
-
-  </form>
-
-    <!-- lista dos serviços cadastrados -->
-    <div class="lista-servicos-admin">
-
-        <h2>Serviços cadastrados</h2>
-    
-        <!-- apresenta um cartão para cada serviço -->
-        <article
-          class="cartao-servico-admin"
-          *ngFor="let servico of servicos"
-        >
-    
-          <h3>{{ servico.item }}</h3>
-    
-          <p>{{ servico.descricaoItem }}</p>
-    
-          <strong>
-            {{ servico.preco | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
-          </strong>
-    
-        </article>
-    
-        <!-- mensagem exibida quando não existem serviços -->
-        <div *ngIf="servicos.length === 0">
-          <p>Nenhum serviço cadastrado.</p>
-        </div>
-    
-      </div>
-
       <span>PURPLE BOMB</span>
       <h2>Gerenciar serviços</h2>
       <p>Cadastre e mantenha os serviços da sua loja atualizados.</p>
     </div>
   
+    <!-- formulário para cadastrar um novo serviço -->
+    <form class="formulario-servico">
+  
+      <!-- campo para informar o nome do serviço -->
+      <div class="campo-formulario">
+        <label for="nomeServico">Nome do serviço</label>
+        <input
+          type="text"
+          id="nomeServico"
+          name="nomeServico"
+          [(ngModel)]="novoServico.item"
+          placeholder="Ex.: Limpeza de pele"
+        >
+      </div>
+  
+      <!-- campo para informar a descrição do serviço -->
+      <div class="campo-formulario">
+        <label for="descricaoServico">Descrição</label>
+        <textarea
+          id="descricaoServico"
+          name="descricaoServico"
+          [(ngModel)]="novoServico.descricaoItem"
+          placeholder="Descreva o serviço oferecido"
+        ></textarea>
+      </div>
+  
+      <!-- campo para selecionar a categoria do serviço -->
+      <div class="campo-formulario">
+        <label for="categoriaServico">Categoria</label>
+        <select
+          id="categoriaServico"
+          name="categoriaServico"
+          [(ngModel)]="novoServico.idcategoria"
+        >
+          <option [ngValue]="2">Estética e Bem-Estar</option>
+        </select>
+      </div>
+  
+      <!-- campo para informar o preço do serviço -->
+      <div class="campo-formulario">
+        <label for="precoServico">Preço (R$)</label>
+        <input
+          type="number"
+          id="precoServico"
+          name="precoServico"
+          [(ngModel)]="novoServico.preco"
+          min="0"
+          step="0.01"
+          placeholder="Ex.: 80,00"
+        >
+      </div>
+  
+      <!-- botão para cadastrar um serviço ou salvar uma edição -->
+        <button
+        type="button"
+        (click)="idServicoEdicao === null ? cadastrarServico() : salvarEdicaoServico()"
+        >
+        <!-- altera o texto do botão conforme a operação realizada -->
+        {{ idServicoEdicao === null ? 'Cadastrar serviço' : 'Salvar alterações' }}
+        </button>
+  
+    </form>
+  
+    <!-- lista dos serviços cadastrados -->
+    <div class="lista-servicos-admin">
+  
+      <h2>Serviços cadastrados</h2>
+  
+      <!-- apresenta um cartão para cada serviço -->
+      <article
+        class="cartao-servico-admin"
+        *ngFor="let servico of servicos"
+      >
+  
+        <!-- apresenta o nome do serviço -->
+        <h3>{{ servico.item }}</h3>
+  
+        <!-- apresenta a descrição do serviço -->
+        <p>{{ servico.descricaoItem }}</p>
+  
+        <!-- apresenta o preço formatado em reais -->
+        <strong>
+          {{ servico.preco | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
+        </strong>
+
+        <!-- botão para carregar o serviço no formulário -->
+        <button type="button" (click)="editarServico(servico)">
+        Editar
+        </button>
+  
+      </article>
+  
+      <!-- mensagem exibida quando não existem serviços -->
+      <div *ngIf="servicos.length === 0">
+        <p>Nenhum serviço cadastrado.</p>
+      </div>
+  
+    </div>
+  
   </section>
+  

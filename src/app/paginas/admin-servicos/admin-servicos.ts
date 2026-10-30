@@ -36,6 +36,9 @@ export class AdminServicos implements OnInit {
     ativoProdutoServico: 'A'
   };
 
+    // guarda o identificador do serviço que está sendo editado
+    idServicoEdicao: number | null = null;
+
   // construtor responsável por disponibilizar os recursos necessários para o componente
   constructor(
 
@@ -71,6 +74,79 @@ export class AdminServicos implements OnInit {
           console.error('Erro ao consultar serviços:', erro);
         }
       });
+  }
+
+    // carrega os dados do serviço selecionado para edição
+    editarServico(servico: Servico): void {
+
+      // guarda o identificador do serviço selecionado
+      this.idServicoEdicao = servico.iditem;
+  
+      // preenche o formulário com os dados do serviço
+      this.novoServico = {
+        idcategoria: servico.idcategoria,
+        item: servico.item,
+        descricaoItem: servico.descricaoItem,
+        preco: servico.preco,
+        tipoItem: servico.tipoItem,
+        ativoProdutoServico: servico.ativoProdutoServico
+      };
+    }
+
+      // salva as alterações do serviço na API
+  salvarEdicaoServico(): void {
+
+    // verifica se existe um serviço selecionado para edição
+    if (this.idServicoEdicao === null) {
+      return;
+    }
+
+    // envia os dados atualizados para o backend
+    this.http.put<void>(
+      `https://localhost:7161/api/Item/${this.idServicoEdicao}`,
+      this.novoServico
+    ).subscribe({
+
+      // executa quando a atualização é realizada com sucesso
+      next: () => {
+
+        // atualiza os dados do serviço na lista
+        const indice = this.servicos.findIndex(
+          servico => servico.iditem === this.idServicoEdicao
+        );
+
+        if (indice !== -1) {
+          this.servicos[indice] = {
+            ...this.novoServico,
+            iditem: this.idServicoEdicao!
+          };
+        }
+
+        // limpa o formulário
+        this.novoServico = {
+          idcategoria: 2,
+          item: '',
+          descricaoItem: '',
+          preco: 0,
+          tipoItem: 'S',
+          ativoProdutoServico: 'A'
+        };
+
+        // encerra o modo de edição
+        this.idServicoEdicao = null;
+
+        // atualiza a tela
+        this.cdr.detectChanges();
+
+        alert('Serviço atualizado com sucesso!');
+      },
+
+      // executa caso ocorra algum erro na atualização
+      error: (erro) => {
+        console.error('Erro ao atualizar serviço:', erro);
+        alert('Não foi possível atualizar o serviço.');
+      }
+    });
   }
 
   // cadastra um novo serviço na API
