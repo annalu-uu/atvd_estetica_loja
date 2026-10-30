@@ -57,6 +57,35 @@
 <button type="button" (click)="cadastrarServico()"> Cadastrar serviço </button>
 
   </form>
+
+    <!-- lista dos serviços cadastrados -->
+    <div class="lista-servicos-admin">
+
+        <h2>Serviços cadastrados</h2>
+    
+        <!-- apresenta um cartão para cada serviço -->
+        <article
+          class="cartao-servico-admin"
+          *ngFor="let servico of servicos"
+        >
+    
+          <h3>{{ servico.item }}</h3>
+    
+          <p>{{ servico.descricaoItem }}</p>
+    
+          <strong>
+            {{ servico.preco | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
+          </strong>
+    
+        </article>
+    
+        <!-- mensagem exibida quando não existem serviços -->
+        <div *ngIf="servicos.length === 0">
+          <p>Nenhum serviço cadastrado.</p>
+        </div>
+    
+      </div>
+
       <span>PURPLE BOMB</span>
       <h2>Gerenciar serviços</h2>
       <p>Cadastre e mantenha os serviços da sua loja atualizados.</p>
