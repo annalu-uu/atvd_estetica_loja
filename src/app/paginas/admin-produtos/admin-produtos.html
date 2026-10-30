@@ -3,22 +3,58 @@
 
     <!-- título e descrição da página -->
     <div class="titulo-admin-produtos">
-  
-      <!-- identificação da marca -->
       <span>PURPLE BOMB</span>
-  
-      <!-- título principal -->
       <h2>Gerenciar produtos</h2>
-  
-      <!-- descrição da página -->
-      <p>Consulte e mantenha os produtos da sua loja atualizados.</p>
-  
+      <p>Cadastre e mantenha os produtos da sua loja atualizados.</p>
     </div>
   
-    <!-- área responsável por apresentar a lista de produtos -->
-    <div class="lista-produtos-admin">
+    <!-- formulário para cadastrar um novo produto -->
+    <form class="formulario-produto">
   
-      <!-- título da lista -->
+      <!-- campo para informar o nome do produto -->
+      <div class="campo-formulario">
+        <label for="item">Nome do produto</label>
+        <input
+          type="text"
+          id="item"
+          name="item"
+          [(ngModel)]="novoProduto.item"
+          placeholder="Digite o nome do produto">
+      </div>
+  
+      <!-- campo para informar a descrição do produto -->
+      <div class="campo-formulario">
+        <label for="descricaoItem">Descrição</label>
+        <textarea
+          id="descricaoItem"
+          name="descricaoItem"
+          [(ngModel)]="novoProduto.descricaoItem"
+          placeholder="Descreva o produto">
+        </textarea>
+      </div>
+  
+      <!-- campo para informar o preço do produto -->
+      <div class="campo-formulario">
+        <label for="preco">Preço</label>
+        <input
+          type="number"
+          id="preco"
+          name="preco"
+          [(ngModel)]="novoProduto.preco"
+          placeholder="Digite o preço"
+          min="0.01"
+          step="0.01">
+      </div>
+  
+      <!-- botão para cadastrar um produto ou salvar uma edição -->
+        <button type="button" (click)="idProdutoEdicao === null ? cadastrarProduto() : salvarEdicaoProduto()">
+        {{ idProdutoEdicao === null ? 'Cadastrar produto' : 'Salvar alterações' }}
+        </button>
+  
+    </form>
+  
+    <!-- área da lista de produtos cadastrados -->
+    <div class="lista-produtos-admin">
       <h2>Produtos cadastrados</h2>
   
       <!-- percorre a lista e apresenta cada produto ativo -->
@@ -30,14 +66,19 @@
         <!-- apresenta a descrição do produto -->
         <p>{{ produto.descricaoItem }}</p>
   
-        <!-- apresenta o preço do produto no formato de moeda brasileira -->
+        <!-- apresenta o preço no formato de moeda brasileira -->
         <strong>
           {{ produto.preco | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
         </strong>
+
+        <!-- botão para carregar o produto no formulário -->
+        <button type="button" (click)="editarProduto(produto)">
+        Editar
+        </button>
   
       </article>
   
-      <!-- apresenta uma mensagem quando não existem produtos cadastrados -->
+      <!-- mensagem apresentada quando não existem produtos -->
       <div *ngIf="produtos.length === 0">
         <p>Nenhum produto cadastrado.</p>
       </div>

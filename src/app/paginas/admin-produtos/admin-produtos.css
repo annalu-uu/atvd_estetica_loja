@@ -32,6 +32,77 @@
     font-size: 16px;
   }
   
+  /* formulário de cadastro */
+  .formulario-produto {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px #59367515;
+  }
+  
+  /* organização de cada campo */
+  .campo-formulario {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+  }
+  
+  /* textos dos campos */
+  .campo-formulario label {
+    color: #593675;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  /* campos de entrada */
+  .campo-formulario input,
+  .campo-formulario textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dfd0eb;
+    border-radius: 9px;
+    background: #fcfaff;
+    color: #493653;
+    font-size: 15px;
+    box-sizing: border-box;
+    outline: none;
+  }
+  
+  /* destaque ao selecionar um campo */
+  .campo-formulario input:focus,
+  .campo-formulario textarea:focus {
+    border-color: #9664b8;
+    box-shadow: 0 0 0 3px #9664b820;
+  }
+  
+  /* altura da descrição */
+  .campo-formulario textarea {
+    min-height: 110px;
+    resize: vertical;
+  }
+  
+  /* botão de cadastro */
+  .formulario-produto button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #79509b;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* efeito ao passar o mouse */
+  .formulario-produto button:hover {
+    background: #593675;
+    transform: translateY(-2px);
+  }
+  
   /* área da lista de produtos */
   .lista-produtos-admin {
     max-width: 900px;
@@ -73,6 +144,26 @@
     color: #79509b;
     font-size: 18px;
   }
+
+  /* botão para editar o produto */
+    .cartao-produto-admin button {
+    display: block;
+    margin-top: 15px;
+    background-color: #9664b8;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* efeito ao passar o mouse */
+.cartao-produto-admin button:hover {
+    background-color: #75469a;
+}
   
   /* adaptação para telas menores */
   @media (max-width: 600px) {
@@ -83,4 +174,9 @@
     .titulo-admin-produtos h2 {
       font-size: 26px;
     }
+  
+    .formulario-produto {
+      padding: 22px;
+    }
+
   }
