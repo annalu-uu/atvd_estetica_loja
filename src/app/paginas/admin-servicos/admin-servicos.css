@@ -1,0 +1,121 @@
+/* área principal da página */
+.admin-servicos {
+    padding: 50px 8%;
+    min-height: 80vh;
+    background: #f8f4fc;
+  }
+  
+  /* título da página */
+  .titulo-admin-servicos {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  /* identificação da marca */
+  .titulo-admin-servicos span {
+    color: #9664b8;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+  
+  /* título principal */
+  .titulo-admin-servicos h2 {
+    color: #593675;
+    font-size: 32px;
+    margin: 12px 0;
+  }
+  
+  /* descrição do título */
+  .titulo-admin-servicos p {
+    color: #796987;
+    font-size: 16px;
+  }
+  
+  /* formulário de cadastro */
+  .formulario-servico {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px #59367515;
+  }
+  
+  /* organização de cada campo */
+  .campo-formulario {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+  }
+  
+  /* textos dos campos */
+  .campo-formulario label {
+    color: #593675;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  /* campos de entrada */
+  .campo-formulario input,
+  .campo-formulario textarea,
+  .campo-formulario select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dfd0eb;
+    border-radius: 9px;
+    background: #fcfaff;
+    color: #493653;
+    font-size: 15px;
+    box-sizing: border-box;
+    outline: none;
+  }
+  
+  /* destaque ao selecionar um campo */
+  .campo-formulario input:focus,
+  .campo-formulario textarea:focus,
+  .campo-formulario select:focus {
+    border-color: #9664b8;
+    box-shadow: 0 0 0 3px #9664b820;
+  }
+  
+  /* altura da descrição */
+  .campo-formulario textarea {
+    min-height: 110px;
+    resize: vertical;
+  }
+  
+  /* botão de cadastro */
+  .formulario-servico button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #79509b;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* efeito ao passar o mouse */
+  .formulario-servico button:hover {
+    background: #593675;
+    transform: translateY(-2px);
+  }
+  
+  /* adaptação para telas menores */
+  @media (max-width: 600px) {
+    .admin-servicos {
+      padding: 35px 5%;
+    }
+  
+    .titulo-admin-servicos h2 {
+      font-size: 26px;
+    }
+  
+    .formulario-servico {
+      padding: 22px;
+    }
+  }

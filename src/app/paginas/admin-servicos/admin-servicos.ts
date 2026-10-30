@@ -49,6 +49,16 @@ export class AdminServicos {
       // cadastra um novo serviço na API
   cadastrarServico(): void {
 
+        // verifica se os campos obrigatórios foram preenchidos
+        if (
+          !this.novoServico.item.trim() ||
+          !this.novoServico.descricaoItem.trim() ||
+          this.novoServico.preco <= 0
+        ) {
+          alert('Preencha todos os campos corretamente.');
+          return;
+        }
+
     // envia os dados do novo serviço para o backend
     this.http.post<Servico>(
       'https://localhost:7161/api/Item',
